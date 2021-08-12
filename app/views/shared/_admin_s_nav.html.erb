@@ -22,38 +22,36 @@
                         </nav>
                     </div>
 
-                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseUsers" aria-expanded="false" aria-controls="collapseUsers">
+                    <a class="nav-link collapsed" href="#!" data-bs-toggle="collapse" data-bs-target="#collapseUsers" aria-expanded="false" aria-controls="collapseUsers">
                         <div class="sb-nav-link-icon"><i class="bi bi-people text-muted fs-5"></i></div>
                         Users
                         <div class="sb-sidenav-collapse-arrow"><i class="bi bi-chevron-down"></i></div>
                     </a>
                     <div class="collapse" id="collapseUsers" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="layout-static.html">Add User</a>
-                            <a class="nav-link" href="layout-sidenav-light.html">View Users</a>
+                            <a class="nav-link" href="#!">Add User</a>
+                            <a class="nav-link" href="#!">View Users</a>
                         </nav>
                     </div>
 
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="#!">
                         <div class="sb-nav-link-icon"><i class="bi bi-chat-right-dots fs-5 text-muted"></i></div>
                         Comments <span class="badge ms-1 bg-secondary">0</span>
                     </a>
 
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="#!">
                         <div class="sb-nav-link-icon"><i class="bi bi-bell fs-5 text-muted"></i></div>
                         Notifications <span class="badge ms-1 bg-secondary">0</span>
                     </a>
 
 
-                    
+                    <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+                    <%= link_to "Edit Profile", edit_user_registration_path, class: "nav-link" %>
                     
                     <div class="sb-sidenav-menu-heading">Addons</div>
-                    <a class="nav-link" href="index.html">
-                        <div class="sb-nav-link-icon"><i class="bi bi-person fs-5 text-muted"></i></i></div>
-                        User Profile
-                    </a>
+                    
 
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="#!">
                         <div class="sb-nav-link-icon"><i class="bi bi-gear text-muted fs-5"></i></i></div>
                         Settings
                     </a>
@@ -61,7 +59,7 @@
             </div>
             <div class="sb-sidenav-footer">
                 <div class="small">Logged in as:</div>
-                Super Admin
+                johny
             </div>
         </nav>
     </div>

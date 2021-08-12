@@ -1,6 +1,5 @@
   <%= render "shared/nav" %>
 
-<p id="notice"><%= notice %></p>
 
 
 
@@ -11,7 +10,9 @@
             <div class="container">
                 <div class="text-center my-5">
                     <h1 class="fw-bolder">Welcome to Post Page!</h1>
+                    <% if user_signed_in? %>
                     <p><%= link_to 'Back', all_articles_path %></p>
+                    <% end %>
                 </div>
             </div>
         </header>

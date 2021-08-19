@@ -24,12 +24,12 @@
                
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link " id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">John Doe <i class="bi bi-person-circle fs-4"> </i></a>
+                    <a class="nav-link " id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><%= current_user.username %> <i class="bi bi-person-circle fs-4"> </i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Settings</a></li>
+                        <li><a class="dropdown-item" href="#!"><%= link_to "User Profile", edit_user_registration_path, class: "dropdown-item" %></a></li>
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        <li><a class="dropdown-item" href="#!"><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item text-danger" %></a></li>
                     </ul>
                 </li>
             </ul>

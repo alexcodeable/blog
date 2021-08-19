@@ -5,9 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
         
   has_many :articles
-  validates :first_name, presence: true, length: { minimun: 3, maximum: 25 }
-  validates :last_name, presence: true, length: { minimun: 3, maximum: 25 }
-  validates :username, presence: true, uniqueness: { case_sensitive: false }, length: { minimun: 3, maximum: 25 }
+  validates :first_name, presence: true, length: { minimum: 3, maximum: 25 }
+  validates :last_name, presence: true, length: { minimum: 3, maximum: 25 }
+  validates :username, presence: true, uniqueness: { case_sensitive: false }, length: { minimum: 3, maximum: 25 }
 
   attr_writer :login
 

@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.all.order("created_at DESC").limit(6)
+    @articles = Article.paginate(page: params[:page], per_page: 6) #.order("created_at DESC")
   end
 
   def all_articles

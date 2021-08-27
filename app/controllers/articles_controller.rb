@@ -1,14 +1,17 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.paginate(page: params[:page], per_page: 6) #.order("created_at DESC")
+    @articles = Article.paginate(page: params[:page], per_page: 6).order("created_at DESC")
   end
 
+  #if user_signed_in? && (article.user == current_user || current_user.admin? )
   def all_articles
     @articles = Article.all.order("created_at DESC")
   end
+  #end
 
   # GET /articles/1 or /articles/1.json
   def show
@@ -26,6 +29,7 @@ class ArticlesController < ApplicationController
   # POST /articles or /articles.json
   def create
     @article = Article.new(article_params)
+    @article.user = current_user
 
     respond_to do |format|
       if @article.save

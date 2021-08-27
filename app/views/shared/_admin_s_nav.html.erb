@@ -22,6 +22,8 @@
                         </nav>
                     </div>
 
+                    <% if current_user.admin?%>
+
                     <a class="nav-link collapsed" href="#!" data-bs-toggle="collapse" data-bs-target="#collapseUsers" aria-expanded="false" aria-controls="collapseUsers">
                         <div class="sb-nav-link-icon"><i class="bi bi-people text-muted fs-5"></i></div>
                         Users
@@ -33,12 +35,12 @@
                             <a class="nav-link" href="#!">View Users</a>
                         </nav>
                     </div>
-
                     <a class="nav-link" href="#!">
                         <div class="sb-nav-link-icon"><i class="bi bi-chat-right-dots fs-5 text-muted"></i></div>
                         Comments <span class="badge ms-1 bg-secondary">0</span>
                     </a>
 
+                    <% end %>
                     <a class="nav-link" href="#!">
                         <div class="sb-nav-link-icon"><i class="bi bi-bell fs-5 text-muted"></i></div>
                         Notifications <span class="badge ms-1 bg-secondary">0</span>
@@ -50,16 +52,17 @@
                     
                     <div class="sb-sidenav-menu-heading">Addons</div>
                     
-
+                    <% if current_user.admin?%>
                     <a class="nav-link" href="#!">
                         <div class="sb-nav-link-icon"><i class="bi bi-gear text-muted fs-5"></i></i></div>
                         Settings
                     </a>
+                    <% end %>
                 </div>
             </div>
             <div class="sb-sidenav-footer">
                 <div class="small">Logged in as:</div>
-                <%= current_user.username %>
+                <%= current_user.username %> <span class="text-success"><%= "[ Admin ]" if current_user.admin? %></span>
             </div>
         </nav>
     </div>
